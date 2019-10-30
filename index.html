@@ -1,13 +1,35 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <script type="text/javascript">
-    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
     (function(d, m){
-      var kommunicateSettings = {"appId":"1a6d1987cf7c87ed82eae5041e1295131","popupWidget":true,"automaticChatOpenOnNavigation":true};
-      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+
+    /*---------------- Kommunicate settings start ----------------*/
+
+     var kommunicateSettings = {
+      "appId": "2e0721956713b5ad95bd16a5a0d95efa7",  
+      "automaticChatOpenOnNavigation": true,
+      "popupWidget": true,
+      
+      "onInit": function (){
+        // paste your code here
+        Kommunicate.updateUserLanguage("en"); 
+      }
+     /*,
+        "botIds":["<BOT_ID_1>","<BOT_ID_2>"]
+      */
+      };
+
+    /*----------------- Kommunicate settings end ------------------*/
+
+     var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
       s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-      window.kommunicate = m; m._globals = kommunicateSettings;
+      var h = document.getElementsByTagName("head")[0];
+      h.appendChild(s);
+      window.kommunicate = m;
+      m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
 </script>
